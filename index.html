@@ -1,0 +1,37 @@
+<!doctype html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  .loading {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 2px solid gray;
+    border-bottom-color: transparent;
+    -webkit-animation: rotate 1s linear 0s infinite;
+            animation: rotate 1s linear 0s infinite;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+  .loading.-show {
+    opacity: 1;
+  }
+  @keyframes rotate {
+      0% { -webkit-transform: rotate(  0deg); transform: rotate(  0deg); }
+     50% { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+</style>
+
+<!-- Content Here -->
+<div class="loading"></div>
+
+<script>
+  setTimeout(function() {
+    document.querySelector('.loading').classList.add('-show');
+  }, 1000);
+</script>
